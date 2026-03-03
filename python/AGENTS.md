@@ -1,7 +1,6 @@
 # Python
 
 ## package management: uv
-source: `https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/`
 
 Use uv exclusively for Python package management in this project.
 All Python dependencies **must be installed, synchronized, and locked** using uv.
