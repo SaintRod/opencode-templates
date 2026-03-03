@@ -15,4 +15,4 @@ To create useful and repeatable files for working with opencode.
 # Sources
 
 - [https://boristane.com/blog/how-i-use-claude-code/](https://boristane.com/blog/how-i-use-claude-code/)
-
+- [https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/](https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/)
