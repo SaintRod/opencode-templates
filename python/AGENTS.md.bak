@@ -84,7 +84,7 @@ if __name__ == "__main__":
 ## data analysis: ibis
 
 - module name: `ibis-framework`
-- preferred backend: `duckdb`
+- prefered backend: `duckdb`
 - installation command: `'ibis-framework[duckdb]'`
 - docs: `https://ibis-project.org/backends/duckdb`
 
