@@ -22,8 +22,14 @@
 	- `box::use()`
 	- `box::use(
 		dplyr[arrange, groupby, summarize],
-		here[here]
+		here[here],
+		foo = pkg[namespace1, namespace2], # import with an alias
+		src / aws / file[namespace] # local function
 	  )`
+- uses
+	- `arrange()`
+	- `here()`
+	- `foo$namespace1`
 
 ## relative path references: here
 
@@ -83,3 +89,10 @@
 
 - use the native pipe: `|>`
 
+## syntax
+
+- prefer base r over tidyverse unless doing so would be too verbose
+- base `subset()` is fine for most use cases but `dplyr::filter()` can be easier to read if there are many filter conditions
+- prefer `dplyr::groupby` and `dplyr::summarise` over base r `aggregate`
+- prefer `purrr::chuck` over `obj[["name"]]` as chuck is safer
+- generate empty vectors with `vector(type, length)`
