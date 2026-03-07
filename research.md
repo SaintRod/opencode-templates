@@ -6,7 +6,7 @@ Read this folder in-depth, understand how it works deeply, what it does and all 
 When that’s done, write a detailed report of your learnings and findings in this file under the research header.
 Use step-by-step reasoning and discuss your reasoning.
 Be succinct but clear and explicit - leave no ambiguity.
-Leverage the project structure in your research.
+Leverage the project artifacts, code, and structure in your research.
 
 ##General guidance
 
