@@ -12,7 +12,7 @@ Examples:
 
 - `r/skills/<name>/SKILL.md`
 - `py/skills/<name>/SKILL.md`
-- `julia/skills/<name>SKILL.md`
+- `julia/skills/<name>/SKILL.md`
 
 If a `language/skills` path does not exist, create it via `mkdir -p language/skills/<name>/`
 
