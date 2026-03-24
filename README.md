@@ -12,6 +12,10 @@ To create useful and repeatable files for working with opencode.
 	- languages: [python, r, julia]
 	- files: `AGENTS.md`
 
+# Installing skills
+
+[https://github.com/vercel-labs/skills](https://github.com/vercel-labs/skills)
+
 # Sources
 
 - [https://boristane.com/blog/how-i-use-claude-code/](https://boristane.com/blog/how-i-use-claude-code/)
