@@ -2,14 +2,15 @@
 name: py-tables
 description: >
   Create publication-ready tables using great-tables. Use when formatting dataframes
-  into presentation-quality tables for reports, HTML output, or sharing. Covers:
-  (1) Creating basic tables with GT(), (2) Adding headers and footers,
-  (3) Formatting columns and cells, (4) Styling and theming tables.
+  into presentation-quality tables for reports, HTML output, or sharing. Supports both
+  pandas and polars DataFrames. Covers: (1) Creating basic tables with GT(),
+  (2) Adding headers and footers, (3) Formatting columns and cells,
+  (4) Styling and theming tables.
 ---
 
 # great-tables
 
-Use `great_tables` to create publication-quality tables from pandas DataFrames.
+Use `great_tables` to create publication-quality tables from pandas or polars DataFrames.
 
 **Note:** Install `great-tables` using the py-uv skill.
 

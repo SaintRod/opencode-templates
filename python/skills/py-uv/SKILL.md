@@ -70,7 +70,7 @@ Run this after cloning a project or when the lock file changes.
 Execute Python scripts and tools:
 
 ```bash
-# Run a Python script
+# Run a Python script (within project environment)
 uv run script.py
 
 # Run with arguments
@@ -79,24 +79,27 @@ uv run script.py --input data.csv
 # Run Python REPL
 uv run python
 
-# Run tools (pytest, black, etc.)
-uv run pytest
-uv run black .
+# Run tools without installing (one-time execution)
+uvx pytest
+uvx black .
+uvx quarto render
 ```
+
+**Key distinction:**
+- Use `uv run` for scripts and REPL (runs in the project's virtual environment)
+- Use `uvx` for tools you don't want to install (invokes without installation)
+- If a tool is installed via `uv add`, use `uv run <tool>` instead of `uvx`
 
 ## Must-Follow Rules
 
-1. **Always use uv exclusively**: Never use pip, pip-tools, poetry, or conda directly.
-   Use `uv add` instead of `pip install`.
+1. **Always use uv exclusively**: Never use pip, pip-tools, poetry, or conda directly. Only use `uv add` for installing packages; never use `pip install`.
 
-2. **Initialize with --no-package**: Use `uv init --no-package` to create a project
-   without building a package.
+2. **Initialize with --no-package**: Use `uv init --no-package` to create a project without building a package, unless the user specifies it's a package.
 
 3. **Ask for Python version**: When initializing, ask the user which Python version
    to use (e.g., 3.11, 3.12).
 
-4. **Use uv run for execution**: Always use `uv run` to execute Python scripts or
-   tools; never activate the virtual environment manually.
+4. **Use uv run for execution**: Always use `uv run` to execute Python scripts. Use `uvx tool` to run tools; never activate the virtual environment manually.
 
 5. **Sync after cloning**: Run `uv sync` after cloning a project with an existing
    `uv.lock` file.

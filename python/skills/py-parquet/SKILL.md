@@ -20,7 +20,7 @@ import pyarrow.parquet as pq
 # Read to pyarrow Table
 table = pq.read_table("data.parquet")
 
-# Convert to pandas DataFrame (optional)
+# Convert to pandas DataFrame (optional and only if requested or required)
 df = table.to_pandas()
 ```
 
@@ -28,10 +28,8 @@ df = table.to_pandas()
 
 ```python
 import pyarrow.parquet as pq
-import pyarrow as pa
 
 # Write from pyarrow Table
-table = pa.Table.from_pandas(df)
 pq.write_table(table, "output.parquet")
 ```
 

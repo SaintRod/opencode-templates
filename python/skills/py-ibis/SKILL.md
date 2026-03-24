@@ -10,7 +10,7 @@ description: >
 
 # ibis
 
-Use `ibis` for database-agnostic data analysis with a pandas-like syntax.
+Use `ibis` for database-agnostic data analysis.
 Ibis compiles expressions to efficient SQL (via DuckDB by default).
 
 **Note:** Install `ibis-framework[duckdb]` using the py-uv skill.
@@ -108,6 +108,55 @@ result = t.select(s.numeric())
 # Select columns starting with 'sales'
 result = t.select(s.startswith("sales"))
 ```
+
+### Join tables
+
+```python
+import ibis
+from ibis import _
+
+# Simple join on column name
+result = ratings.join(movies, "movieId", how="left")
+
+# Join with explicit condition
+result = ratings.join(
+    movies,
+    ratings.movieId == movies.movieId
+)
+
+# Self-join (use .view() to create distinct table reference)
+movie_tags = tags["movieId", "tag"]
+view = movie_tags.view()
+result = movie_tags.join(
+    view,
+    movie_tags.movieId == view.movieId
+)
+
+# Complex join condition with tuple
+result = movie_tags.join(
+    view,
+    [
+        movie_tags.movieId != view.movieId,
+        (_.tag.lower(), lambda t: t.tag.lower()),
+    ]
+)
+```
+
+## Interactive Mode
+
+Control whether Ibis prints query information to stdout:
+
+```python
+import ibis
+
+# Enable interactive mode (prints query info)
+ibis.options.interactive = True
+
+# Disable interactive mode (quiet)
+ibis.options.interactive = False
+```
+
+Set to `True` for debugging and development; set to `False` for production scripts.
 
 ## Must-Follow Rules
 

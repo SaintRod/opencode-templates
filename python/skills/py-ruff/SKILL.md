@@ -40,6 +40,9 @@ Check code for style violations and errors:
 # Check all files
 uvx ruff check .
 
+# Check and auto-fix issues
+uvx ruff check --fix .
+
 # Check specific file
 uvx ruff check script.py
 

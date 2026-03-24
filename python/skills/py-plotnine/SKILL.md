@@ -25,15 +25,18 @@ from plotnine import (
     geom_line,
     geom_bar,
     theme_minimal,
+    theme_set,
     labs,
     ggsave,
 )
+
+# Set global theme (applied to all plots)
+theme_set(theme_minimal())
 
 # Create a scatter plot
 (
     ggplot(data, aes(x="var1", y="var2"))
     + geom_point()
-    + theme_minimal()
     + labs(title="My Plot", x="X Label", y="Y Label")
 )
 ```
@@ -43,12 +46,11 @@ from plotnine import (
 ### Scatter plot
 
 ```python
-from plotnine import ggplot, aes, geom_point, theme_minimal
+from plotnine import ggplot, aes, geom_point
 
 (
     ggplot(data, aes(x="x_var", y="y_var"))
     + geom_point()
-    + theme_minimal()
 )
 ```
 
@@ -90,7 +92,7 @@ ggsave(plot, "output.pdf")
 
 2. **Use parentheses for multiline**: Wrap plot code in parentheses for readability.
 
-3. **Use theme_minimal() as default**: Prefer theme_minimal() unless specifically needed.
+3. **Set global theme**: Set the global theme at the start of your script using `theme_set(theme_minimal())` unless otherwise specified.
 
 4. **Save with high DPI**: Use dpi=300 when saving PNG files for publication quality.
 
