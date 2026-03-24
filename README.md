@@ -14,7 +14,13 @@ To create useful and repeatable files for working with opencode.
 
 # Installing skills
 
-[https://github.com/vercel-labs/skills](https://github.com/vercel-labs/skills)
+Skills are packages of specialized instructions that can be loaded by opencode to provide domain-specific workflows and guidance. To install skills, clone the skills repository into your home directory:
+
+```bash
+git clone https://github.com/vercel-labs/skills ~/.opencode/skills
+```
+
+After installation, skills can be loaded when a task matches their description.
 
 # Sources
 
