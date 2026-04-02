@@ -8,7 +8,7 @@ Use step-by-step reasoning and discuss your reasoning.
 Be succinct but clear and explicit - leave no ambiguity.
 Leverage the project artifacts, code, and structure in your research.
 
-##General guidance
+# General guidance
 
 - `src`
 	- houses functions
@@ -27,5 +27,11 @@ Leverage the project artifacts, code, and structure in your research.
 	- I often programmatically generate documentation based on doc strings
 - `docs` or `pages` are GitHub and GitLab publishing conventions, ignore these directories
 
+
+# Skills
+
+Use these skills throughout your research:
+
+- describe-design
 
 # Research
