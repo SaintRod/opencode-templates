@@ -6,7 +6,8 @@ description: >
   health and risk. Covers five commands: (1) Code churn hotspots to identify
   high-risk files, (2) Bus factor analysis via commit authorship, (3) Bug
   cluster detection, (4) Project velocity trends, (5) Firefighting frequency.
-  Run from app/ or src/ (not repo root) to filter lockfiles and generated code.
+  Append -- . to commands and run from app/ or src/ (not repo root) to scope
+  results to that subdirectory and filter lockfiles/generated code.
   Always cross-reference churn against bug hotspots -- files on both are
   highest risk.
 ---
@@ -21,7 +22,7 @@ report with interpretation.
 ### 1. Code Churn Hotspots
 
 ```bash
-git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20
+git log --format=format: --name-only --since="1 year ago" | sed '/^$/d' | sort | uniq -c | sort -nr | head -20
 ```
 
 Top 20 most-changed files in the last year.
@@ -38,7 +39,7 @@ Full history vs. recent (6-month) authorship. Flag if one person = 60%+ commits.
 ### 3. Bug Clusters
 
 ```bash
-git log -i -E --grep="fix|bug|broken" --name-only --format='' | sort | uniq -c | sort -nr | head -20
+git log -i -E --grep='\bfix\b|\bbug\b|\bbroken\b' --name-only --format='' | sed '/^$/d' | sort | uniq -c | sort -nr | head -20
 ```
 
 Files most often associated with bug-related commits.
@@ -86,7 +87,7 @@ After running these commands, present the findings as a structured report:
 ---
 
 ## Notes
-- Run commands from `app/` or `src/`, not repo root
+- Run commands from `app/` or `src/` with `-- .` appended to scope to that directory
 - Add `--no-merges` to exclude merge commits for cleaner authorship
 - Bug cluster detection depends on descriptive commit messages
 - Squash-merge workflows compress authorship to merger
