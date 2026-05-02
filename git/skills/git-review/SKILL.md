@@ -66,6 +66,9 @@ Revert/hotfix/emergency commit count.
 
 After running these commands, present the findings as a structured report:
 
+- `research/git-review.md`
+	- run `mkdir -p research` if the directory does not exist before writing
+
 ### Codebase Health Summary
 - **Top churn file:** [filename] ([N] changes) — [flag if notable]
 - **Bus factor risk:** [N]% from top contributor [name] — [flag if >60%]
