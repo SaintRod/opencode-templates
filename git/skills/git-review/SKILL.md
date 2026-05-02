@@ -10,14 +10,14 @@ description: >
   results to that subdirectory and filter lockfiles/generated code.
   Always cross-reference churn against bug hotspots -- files on both are
   highest risk.
+metadata:
+  source: https://piechowski.io/post/git-commands-before-reading-code/
 ---
 
 # Git Review: Codebase Diagnostic Commands
 
 Run these five commands before reading any code. Present output as a summary
 report with interpretation.
-
-source: https://piechowski.io/post/git-commands-before-reading-code/
 
 ## Commands
 
