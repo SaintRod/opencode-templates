@@ -22,7 +22,7 @@ report with interpretation.
 ### 1. Code Churn Hotspots
 
 ```bash
-git log --format=format: --name-only --since="1 year ago" | sed '/^$/d' | sort | uniq -c | sort -nr | head -20
+git log --format=format: --name-only --since="1 year ago" -- . | sed '/^$/d' | sort | uniq -c | sort -nr | head -20
 ```
 
 Top 20 most-changed files in the last year.
@@ -30,8 +30,8 @@ Top 20 most-changed files in the last year.
 ### 2. Bus Factor
 
 ```bash
-git shortlog -sn --no-merges
-git shortlog -sn --no-merges --since="6 months ago"
+git shortlog -sn --no-merges -- .
+git shortlog -sn --no-merges --since="6 months ago" -- .
 ```
 
 Full history vs. recent (6-month) authorship. Flag if one person = 60%+ commits.
@@ -39,15 +39,15 @@ Full history vs. recent (6-month) authorship. Flag if one person = 60%+ commits.
 ### 3. Bug Clusters
 
 ```bash
-git log -i -E --grep='\bfix\b|\bbug\b|\bbroken\b' --name-only --format='' | sed '/^$/d' | sort | uniq -c | sort -nr | head -20
+git log -i -P --grep='\bfix\b|\bbug\b|\bbroken\b' --name-only --format='' -- . | sed '/^$/d' | sort | uniq -c | sort -nr | head -20
 ```
 
-Files most often associated with bug-related commits.
+Files most often associated with bug-related commits. Uses `-P` (Perl regex) for portable `\b` word boundaries; if PCRE is unavailable, fall back to `-E --grep='fix|bug|broken'` and manually filter false positives (e.g., "prefix", "suffix").
 
 ### 4. Project Velocity
 
 ```bash
-git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c
+git log --format='%ad' --date=format:'%Y-%m' -- . | sort | uniq -c
 ```
 
 Monthly commit counts for the full history.
@@ -55,7 +55,7 @@ Monthly commit counts for the full history.
 ### 5. Firefighting Frequency
 
 ```bash
-git log --oneline --since="1 year ago" | grep -iE 'revert|hotfix|emergency|rollback'
+git log --oneline --since="1 year ago" -- . | grep -iE 'revert|hotfix|emergency|rollback'
 ```
 
 Revert/hotfix/emergency commit count.
