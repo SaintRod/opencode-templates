@@ -17,6 +17,8 @@ description: >
 Run these five commands before reading any code. Present output as a summary
 report with interpretation.
 
+source: https://piechowski.io/post/git-commands-before-reading-code/
+
 ## Commands
 
 ### 1. Code Churn Hotspots
