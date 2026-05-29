@@ -24,3 +24,9 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 
 - [https://boristane.com/blog/how-i-use-claude-code/](https://boristane.com/blog/how-i-use-claude-code/)
 - [https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/](https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/)
+
+# Tools
+- [opencode](https://opencode.ai/docs/) as my coding harness
+- [skills](https://github.com/vercel-labs/skills) to install and manage skills
+- [roborev](https://www.roborev.io/) as my reviewer harness
+- [rtk](https://github.com/rtk-ai/rtk) to save tokens on common commands
