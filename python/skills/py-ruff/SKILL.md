@@ -65,6 +65,8 @@ uv python list
 ```toml
 [tool.ruff]
 line-length = 88
+
+[tool.ruff.lint]
 select = ["E", "F", "I"]
 
 [tool.ruff.format]
