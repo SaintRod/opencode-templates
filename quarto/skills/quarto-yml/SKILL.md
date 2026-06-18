@@ -73,12 +73,12 @@ Always set `bread-crumbs: true`.
 ### Page Footer
 Ask: "What text should appear in the footer?" (e.g., your name or organization)
 
-Always set `background: dark`. Replace `{{< current_year >}}` with the current year. If user provides text, use it; otherwise omit the left field or use a generic placeholder:
+Always set `background: dark`. Replace `CURRENT_YEAR` with the current year. If user provides text, use it; otherwise omit the left field or use a generic placeholder:
 
 ```yaml
 page-footer:
   background: dark
-  left: "© {{< current_year >}}-Present Your Name"    # replace "Your Name" with user input, substitute current year
+  left: "© CURRENT_YEAR-Present Your Name"    # replace "Your Name" with user input, replace CURRENT_YEAR with the actual year
 ```
 
 ### Navigation Bar (Navbar)
@@ -133,7 +133,7 @@ website:
   search: true                            # or false
   page-footer:
     background: dark
-    left: "© {{< current_year >}}-Present Your Name"
+    left: "© CURRENT_YEAR-Present Your Name"    # replace CURRENT_YEAR with the actual year
   navbar:
     tools:
       - icon: linkedin
@@ -368,7 +368,7 @@ website:
   search: true
   page-footer:
     background: dark
-    left: "© {{< current_year >}}-Present Your Name"
+    left: "© CURRENT_YEAR-Present Your Name"    # replace CURRENT_YEAR with the actual year
   navbar:
     tools:
       - icon: linkedin
