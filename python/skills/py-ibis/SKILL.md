@@ -175,6 +175,11 @@ Set to `True` for debugging and development; set to `False` for production scrip
 5. **Use DuckDB backend**: This skill assumes DuckDB; other backends may
    have different syntax.
 
+## Related Skills
+
+- **py-here**: Use `here()` to construct database file paths when connecting with `ibis.duckdb.connect()`.
+- **py-parquet**: Use pyarrow for Parquet file I/O; use ibis for analytical queries on that data.
+
 ## Example
 
 ```python

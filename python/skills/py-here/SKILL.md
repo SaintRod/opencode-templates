@@ -13,21 +13,11 @@ description: >
 Use `pyhere.here()` to construct paths relative to the project root. The function finds
 the project root using markers (like .git, pyproject.toml) and constructs absolute paths.
 
+**Important:** `here()` returns a `pathlib.PosixPath` object, not a string. This differs
+from R's `here()` which returns a string. If a string is required (e.g., for some libraries),
+use `str(here())`.
+
 **Note:** Install `pyhere` using the py-uv skill.
-
-## Return Type
-
-The `here()` function returns a `pathlib.PosixPath` object:
-
-```python
->>> from pyhere import here
->>> here()
-PosixPath('/home/user/project/data')
->>> type(here())
-<class 'pathlib.PosixPath'>
-```
-
-Note: This differs from R's here() which returns a string. If a string is required, use `str(here())`.
 
 ## Basic Usage
 
@@ -97,6 +87,12 @@ print(raw_dir)
 print(clean_dir)
 ```
 
+## Related Skills
+
+- **py-parquet**: Use `here()` to construct file paths for Parquet read/write operations.
+- **py-ibis**: Use `here()` to reference database file paths when connecting with DuckDB.
+- **py-plotnine**: Use `here()` to construct output paths for saved plots.
+
 ## Must-Follow Rules
 
 1. **Always use here() for project paths**: Never use hardcoded absolute paths.
@@ -106,7 +102,8 @@ print(clean_dir)
 
 3. **Import from pyhere**: Use `from pyhere import here`, not other import styles.
 
-4. **Remember it returns PosixPath**: The result of here() is a pathlib.PosixPath object, not a string.
+4. **Convert to string when needed**: Since here() returns PosixPath, use `str(here())`
+   when a string path is required by other libraries.
 
 ## Example
 

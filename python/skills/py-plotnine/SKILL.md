@@ -96,6 +96,10 @@ ggsave(plot, "output.pdf")
 
 4. **Save with high DPI**: Use dpi=300 when saving PNG files for publication quality.
 
+## Related Skills
+
+- **py-here**: Use `here()` to construct file paths for saved plots with `ggsave()`.
+
 ## Example
 
 ```python

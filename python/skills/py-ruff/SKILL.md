@@ -58,16 +58,43 @@ List installed Python versions:
 uv python list
 ```
 
+## Common Patterns
+
+### pyproject.toml configuration
+
+```toml
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+```
+
+### Format and lint together
+
+```bash
+uvx ruff format . && uvx ruff check --fix .
+```
+
+### Check specific rules
+
+```bash
+uvx ruff check --select E,F,W .
+```
+
 ## Must-Follow Rules
 
-1. **Always use uvx to run ruff**: Use `uvx ruff`, never `ruff` directly.
+1. **Use uvx for one-off runs**: Use `uvx ruff` when ruff is not a project dependency.
+   If ruff is installed via `uv add --dev ruff`, use `uv run ruff` instead.
 
 2. **Format before committing**: Run `uvx ruff format .` before committing code.
 
 3. **Fix linting errors**: Address all ruff check errors before committing.
 
-4. **Let uv handle configuration**: Configuration goes in pyproject.toml; don't create
-   separate .ruff.toml files.
+4. **Configure in pyproject.toml**: Put ruff configuration under `[tool.ruff]` in
+   pyproject.toml; don't create separate .ruff.toml files.
 
 ## Example
 

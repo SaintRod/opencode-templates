@@ -12,7 +12,7 @@ description: >
 Use `docopt-ng` (imported as `docopt`) to create command-line interfaces by writing help text. docopt parses
 the usage patterns from your docstring.
 
-**Note:** Install `docopt-ng` using the py-uv skill.
+**Note:** Install `docopt-ng` using the py-uv skill. See the py-uv skill for package management commands.
 
 ## Basic Usage
 

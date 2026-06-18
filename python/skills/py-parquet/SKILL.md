@@ -76,6 +76,10 @@ pq.write_table(
 )
 ```
 
+## Related Skills
+
+- **py-here**: Use `here()` to construct file paths for Parquet files instead of hardcoded paths.
+
 ## Must-Follow Rules
 
 1. **Use pyarrow.parquet**: Import as `import pyarrow.parquet as pq`.
