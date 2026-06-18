@@ -30,3 +30,10 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 - [skills](https://github.com/vercel-labs/skills) to install and manage skills
 - [roborev](https://www.roborev.io/) as my reviewer harness
 - [rtk](https://github.com/rtk-ai/rtk) to save tokens on common commands
+- For assessing the best local AI
+	- [llmfit](https://github.com/AlexsJones/llmfit)
+		- `uvx llmfit`
+	- [llm-checker](https://github.com/Pavelevich/llm-checker)
+		- `npx llm-checker`
+	- [whichllm](https://github.com/Andyyyy64/whichllm/)
+		- `uvx whichllm@latest`
