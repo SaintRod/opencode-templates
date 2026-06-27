@@ -37,3 +37,8 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 		- `npx llm-checker`
 	- [whichllm](https://github.com/Andyyyy64/whichllm/)
 		- `uvx whichllm@latest`
+- [Ollama](https://ollama.com/)
+	- update docker image to latest: `docker pull ollama/ollama`
+	- stop and rm existing docker images
+	- start the container): `docker run -d --restart unless-stopped --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama`
+		- [docs](https://github.com/ollama/ollama/blob/main/docs/docker.mdx)
