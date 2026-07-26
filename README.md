@@ -30,7 +30,7 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 - [skills](https://github.com/vercel-labs/skills) to install and manage skills
 - [roborev](https://www.roborev.io/) reviewer layer/harness
 - [rtk](https://github.com/rtk-ai/rtk) to save tokens on common commands
-- [agent-valut](https://github.com/Infisical/agent-vault) credential broker
+- [agent-vault](https://github.com/Infisical/agent-vault) credential broker
 	- `agent-vault run -- opencode`
 - For assessing the best local AI
 	- [llmfit](https://github.com/AlexsJones/llmfit)
