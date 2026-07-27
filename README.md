@@ -26,6 +26,7 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 - [https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/](https://pydevtools.com/handbook/how-to/how-to-configure-claude-code-to-use-uv/)
 
 # Tools
+- [andrej-karpathy-skills](https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/refs/heads/main/CLAUDE.md)
 - [opencode](https://opencode.ai/docs/) as my coding harness
 - [skills](https://github.com/vercel-labs/skills) to install and manage skills
 - [roborev](https://www.roborev.io/) as my reviewer harness
