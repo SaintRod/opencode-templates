@@ -1,6 +1,7 @@
 # Tools
 
 - If `rtk` is installed, it runs as an opencode hook and cannot be bypassed by agents
+- If `roborev` is installed (`roborev version` exits 0), it handles PR review; agents must not push and should always include a commit task in plans
 
 # Formatting and code style guide
 
@@ -120,7 +121,7 @@ During implementation of an approved plan:
 - Run the smallest meaningful validation for the change
 - Record implementation questions, blockers, deviations, and validation failures in the plan
 
-If Roborev is installed, include a final commit task:
+If Roborev is installed (detect: run `roborev version`; exit 0 means installed), include a final commit task:
 
 ```md
 ## Commit
@@ -131,7 +132,7 @@ If Roborev is installed, include a final commit task:
 - [ ] Do not push; the user will manually initiate Roborev review
 ```
 
-If Roborev is not installed, do not include a commit task unless the user explicitly requests one.
+If Roborev is not installed (`roborev version` fails), do not include a commit task unless the user explicitly requests one.
 
 # Working without a plan
 
