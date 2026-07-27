@@ -29,8 +29,10 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 - [andrej-karpathy-skills](https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/refs/heads/main/CLAUDE.md)
 - [opencode](https://opencode.ai/docs/) as my coding harness
 - [skills](https://github.com/vercel-labs/skills) to install and manage skills
-- [roborev](https://www.roborev.io/) as my reviewer harness
+- [roborev](https://www.roborev.io/) reviewer layer/harness
 - [rtk](https://github.com/rtk-ai/rtk) to save tokens on common commands
+- [agent-vault](https://github.com/Infisical/agent-vault) credential broker
+	- `agent-vault run -- opencode`
 - For assessing the best local AI
 	- [llmfit](https://github.com/AlexsJones/llmfit)
 		- `uvx llmfit`
