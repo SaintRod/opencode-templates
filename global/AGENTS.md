@@ -35,12 +35,15 @@ Research files should be Markdown files with YAML front matter:
 ---
 date: yyyy-mm-dd
 updated: yyyy-mm-dd
+status: [open, resolved]
 ---
 ```
 
 Use `date` when the file is created.
 Add or update `updated` only when modifying an existing research file.
+The update date cannot be greater than today().
 Add `status: resolved` when a research file has been completed/resolved.
+ADd `status: open` when a research file is created and has not been implemented.
 
 A new research file should include:
 
@@ -65,6 +68,8 @@ Use project-root-relative `plans/` files when implementation needs explicit alig
 If `plans/` does not exist, do not create it automatically.
 Ask first, unless the user explicitly asks to create a plan or the repo already documents this workflow.
 If requested work is larger than a small single-file change and no plan exists, ask whether to create a plan before implementing.
+Once plans are implemented agents must mark `status: resolved` in the paired research file.
+
 
 Plan files should be Markdown files with YAML front matter:
 
@@ -77,6 +82,7 @@ updated: yyyy-mm-dd
 
 Use `date` when the file is created.
 Add or update `updated` only when modifying an existing plan file.
+The `updated` yaml header cannot be > today()
 
 A new plan file should include:
 
