@@ -97,7 +97,7 @@ Track the work as an ordered checklist.
 
 ## Task format
 
-Each task edits exactly one file and must contain all of these fields:
+Each task edits exactly one file (or runs one command, see below) and must contain all of these fields:
 
 - File: project-root-relative path
 - Lines: line range in the file as it exists before any task runs, plus a unique anchor string for the target (line numbers drift as earlier tasks land)
@@ -113,7 +113,7 @@ Non-code files: Before and After still apply.
 
 Command-only task (no file edit, e.g. install a dependency, run a migration): replace File/Lines/Before/After with a single `Command` field giving the exact command to run; Change and Expected result still apply. If the command has no independent check, Validate may restate the command's own output as the success condition.
 
-The generic checklist example and the Roborev `## Commit` checklist below are ordered sub-steps inside one task, not separate Task-format entries; they don't need their own File/Lines/Before/After/Validate.
+The generic checklist example and the Roborev `## Commit` checklist below are each a self-contained checklist, not a Task-format entry; they don't need their own File/Lines/Before/After/Validate.
 
 Example:
 
