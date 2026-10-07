@@ -34,7 +34,6 @@ Research files should be Markdown files with YAML front matter:
 ```yaml
 ---
 date: yyyy-mm-dd
-updated: yyyy-mm-dd
 status: open
 ---
 ```
@@ -74,13 +73,15 @@ Plan files should be Markdown files with YAML front matter:
 ```yaml
 ---
 date: yyyy-mm-dd
-updated: yyyy-mm-dd
+status: open
 ---
 ```
 
 Use `date` when the file is created.
 Add or update `updated` only when modifying an existing plan file.
 `updated` must not be later than today's date.
+Add `status: open` when a plan file is created.
+Set `status: resolved` when the plan is fully implemented.
 
 A new plan file should include:
 
@@ -94,15 +95,49 @@ Succinctly describe the implementation scope and non-goals.
 Track the work as an ordered checklist.
 ```
 
-Plan tasks should be specific enough to execute and review.
-Include file targets, expected changes, expected results, validation commands, assumptions, risks, and known out-of-scope work when relevant.
+## Task format
 
-- Plans are detailed enough to execute without guessing
-- Plans are narrowly scoped
-- Task sections should follow a logical or chronological order
-- Show the user, don't tell the user; tasks should name the file, change, expected result, and validation
-- Tasks may contain code, and when they do, the code should be fully scoped so the user can review exactly what will be written before implementation
-- Identify tasks that can be completed in parallel
+Each task changes exactly one file (or runs one command) and must contain all of these fields:
+
+- File: project-root-relative path
+- Lines: line range in the file as it exists before any task runs, plus a unique anchor string for the target (line numbers drift as earlier tasks land)
+- Change: one sentence stating the intent
+- Before: the exact current text in a code block (omit for new files)
+- After: the exact new text in a code block (omit for deletions); never use placeholders such as `...` or "similar to above"
+- Expected result: observable outcome, such as a diff stat, output, or behavior
+- Validate: runnable command and the output that means success
+
+New file: show the complete content under After.
+Deletion: show the removed text under Before and state why.
+Non-code files: Before and After still apply.
+
+Example:
+
+````md
+- [ ] Task 3: tighten error message
+  - File: `src/load.py`
+  - Lines: 41-43 (anchor: `raise ValueError("bad input")`)
+  - Change: include the offending path in the error
+  - Before:
+    ```python
+    raise ValueError("bad input")
+    ```
+  - After:
+    ```python
+    raise ValueError(f"bad input: {path}")
+    ```
+  - Expected result: error text ends with the file path
+  - Validate: `uv run pytest tests/test_load.py -k bad_input` passes
+````
+
+Plan-level rules:
+
+- Plans are detailed enough to execute without guessing and are narrowly scoped
+- Order tasks logically or chronologically; order edits to the same file bottom-up, or re-anchor by string, so line numbers stay valid
+- Mark parallel-safe tasks with `[parallel: A]` and dependent tasks with `[after: 3]`
+- State assumptions, risks, and out-of-scope work once in `# Purpose`, not per task
+- A task that cannot name its Before and After is not ready; add an investigation task first
+- Record implementation notes and deviations under the task they affect
 
 Use unchecked boxes for planned work and check them off only after completion:
 
