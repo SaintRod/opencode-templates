@@ -27,8 +27,11 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 
 # Instructions
 
-- [andrej-karpathy-skills](https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/refs/heads/main/CLAUDE.md)
 - Kenn-io agent [constitution](https://raw.githubusercontent.com/kenn-io/constitution/refs/heads/main/CONSTITUTION.md)
+
+## Deployment notes
+
+- `global/CLAUDE.md` imports `~/.config/opencode/AGENTS.md`. Deploy or symlink `global/AGENTS.md` to that path, or Claude Code silently drops the Tools/Research/Plans/Worktree-safety guidance.
 
 # Tools
 - [opencode](https://opencode.ai/docs/) coding harness
@@ -37,6 +40,8 @@ The reason I chose `skills` is that it automates gettings skills, placing skills
 - [rtk](https://github.com/rtk-ai/rtk) to save tokens on common commands
 - [agent-vault](https://github.com/Infisical/agent-vault) credential broker
 	- `agent-vault run -- opencode`
+- [superpowers](https://github.com/obra/superpowers) - software development methodology for coding agents
+- [ponytail](https://github.com/DietrichGebert/ponytail) - to avoid over engineering
 - For assessing the best local AI
 	- [llmfit](https://github.com/AlexsJones/llmfit)
 		- `uvx llmfit`
