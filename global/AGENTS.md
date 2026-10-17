@@ -36,8 +36,8 @@ Use project-root-relative `research/` files when a task needs exploration,
 design discussion, a decision record, or investigation before planning or
 implementation.
 If `research/` does not exist, do not create it automatically.
-Ask the user first, unless the user asks you to start research
-documentation or the repository already documents this workflow.
+Unless the user asks you to start research documentation or the
+repository already documents this workflow, ask the user first.
 Name the file after its topic, for example
 `research/restructure-little-birdie.md`. Put the date in the front matter
 only, never in the filename.
@@ -70,10 +70,10 @@ Record findings, discussion, options, decisions, risks, and open questions.
 ```
 
 Agents must keep only the `# Purpose` and `# Research` sections.
-If users add other headers, preserve them. Do not manage them unless the
-user asks.
-When editing existing research files, preserve their current structure
-unless the user asks for normalization.
+If users add other headers, preserve them. Unless the user asks, do not
+manage them.
+When editing existing research files, unless the user asks for
+normalization, preserve their current structure.
 Research files inform plan files. A one-to-one pairing is not necessary.
 
 # Plans
@@ -81,8 +81,8 @@ Research files inform plan files. A one-to-one pairing is not necessary.
 Use project-root-relative `plans/` files when implementation needs explicit
 alignment before code changes.
 If `plans/` does not exist, do not create it automatically.
-Ask the user first, unless the user asks you to create a plan or the
-repository already documents this workflow.
+Unless the user asks you to create a plan or the repository already
+documents this workflow, ask the user first.
 If requested work is larger than a small single-file change and no plan
 exists, ask whether to create a plan before you implement.
 After you implement a plan, mark `status: resolved` in the research file
@@ -190,15 +190,15 @@ completion:
 - [ ] Record any implementation notes
 ```
 
-While creating or reviewing a plan, do not implement it unless the user
-explicitly asks.
+While creating or reviewing a plan, unless the user explicitly asks, do
+not implement it.
 
 If Ponytail is installed, use it during planning to avoid over-engineering
 and prefer the smallest correct implementation.
 
 During implementation of an approved plan:
 
-- Adhere strictly to the plan unless new information makes it wrong
+- Unless new information makes it wrong, adhere strictly to the plan
 - If the plan becomes wrong or unsafe, stop, ask, and record the issue in
   the plan
 - Update task checkboxes and implementation notes as work completes
@@ -221,8 +221,8 @@ If Roborev is installed, include a final commit task. To detect Roborev, run
 - [ ] Do not push. The user starts Roborev review manually
 ```
 
-If Roborev is not installed (`roborev version` fails), do not include a
-commit task unless the user explicitly requests one.
+If Roborev is not installed (`roborev version` fails), unless the user
+explicitly requests one, do not include a commit task.
 
 # Working without a plan
 
