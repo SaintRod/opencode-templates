@@ -1,14 +1,17 @@
 # Tools
 
-- If `rtk` is installed, it runs as an opencode hook and cannot be bypassed by agents
-- If `roborev` is installed (`roborev version` exits 0), it handles PR review; agents must not push and should always include a commit task in plans
+- If `rtk` is installed, it runs as an opencode hook and cannot be bypassed
+  by agents
+- If `roborev` is installed (`roborev version` exits 0), it handles PR review;
+  agents must not push and should always include a commit task in plans
 
 # Formatting and code style guide
 
-- public modules, classes, and non-obvious functions should have succinct documentation when the language supports it
+- public modules, classes, and non-obvious functions should have succinct
+  documentation when the language supports it
 - code should be self-documenting, but when necessary add succinct comments
 - when generating text, bullet points must not end with a period character
-- format text files such as markdown (.md) to be easily read via terminal in split screen: keep lines under 80 characters
+- keep lines in text files (.md) under 80 chars for split-screen reading
 
 # Instruction precedence
 
@@ -29,6 +32,7 @@ Skip research for small, obvious changes where a plan would be ceremony.
 Use project-root-relative `research/` files when a task needs exploratory thinking, design discussion, decision capture, or investigation before planning or implementation.
 If `research/` does not exist, do not create it automatically.
 Ask first, unless the user explicitly asks to start research documentation or the repo already documents this workflow.
+Name the file after its topic (e.g. `research/restructure-little-birdie.md`); the date belongs in front matter only, never the filename.
 
 Research files should be Markdown files with YAML front matter:
 
@@ -69,6 +73,7 @@ If `plans/` does not exist, do not create it automatically.
 Ask first, unless the user explicitly asks to create a plan or the repo already documents this workflow.
 If requested work is larger than a small single-file change and no plan exists, ask whether to create a plan before implementing.
 Once a plan is implemented, agents must mark `status: resolved` in the research file that informed it, if any.
+Name the file after its topic (e.g. `plans/restructure-little-birdie.md`); the date belongs in front matter only, never the filename.
 Plan files should be Markdown files with YAML front matter:
 
 ```yaml
