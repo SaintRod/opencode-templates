@@ -8,6 +8,7 @@
 - public modules, classes, and non-obvious functions should have succinct documentation when the language supports it
 - code should be self-documenting, but when necessary add succinct comments
 - when generating text, bullet points must not end with a period character
+- format text files such as markdown (.md) to be easily read via terminal in split screen
 
 # Instruction precedence
 
