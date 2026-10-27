@@ -82,6 +82,7 @@ Add or update `updated` only when modifying an existing plan file.
 `updated` must not be later than today's date.
 Add `status: open` when a plan file is created.
 Set `status: resolved` when the plan is fully implemented.
+Set `status: superseded` when another plan replaces it, and link the replacing plan's path under `# Purpose`.
 
 A new plan file should include:
 
