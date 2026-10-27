@@ -41,8 +41,10 @@ status: open
 Use `date` when the file is created.
 Add or update `updated` only when modifying an existing research file.
 `updated` must not be later than today's date.
-Add `status: resolved` when a research file has been completed/resolved.
 Add `status: open` when a research file is created.
+The implementing agent must edit the front matter to update status to `in-progress` when a plan begins implementing the research; keep it if the plan stops partway.
+Add `status: resolved` when a research file has been completed/resolved.
+Set `status: abandoned` when the research is dropped without being resolved.
 
 A new research file should include:
 
@@ -67,7 +69,8 @@ Use project-root-relative `plans/` files when implementation needs explicit alig
 If `plans/` does not exist, do not create it automatically.
 Ask first, unless the user explicitly asks to create a plan or the repo already documents this workflow.
 If requested work is larger than a small single-file change and no plan exists, ask whether to create a plan before implementing.
-Once a plan is implemented, agents must mark `status: resolved` in the research file that informed it, if any.
+An early task in each plan must mark `status: in-progress` in the research file that informed it, if any.
+Once a plan is implemented, agents must mark `status: resolved` in that research file.
 Plan files should be Markdown files with YAML front matter:
 
 ```yaml
@@ -81,8 +84,10 @@ Use `date` when the file is created.
 Add or update `updated` only when modifying an existing plan file.
 `updated` must not be later than today's date.
 Add `status: open` when a plan file is created.
+The implementing agent must edit the front matter to update status to `in-progress` when the first task starts; keep it if the plan stops partway.
 Set `status: resolved` when the plan is fully implemented.
 Set `status: superseded` when another plan replaces it, and link the replacing plan's path under `# Purpose`.
+Set `status: abandoned` when the plan is dropped with no replacement, and give the reason under `# Purpose`.
 
 A new plan file should include:
 
