@@ -103,7 +103,9 @@ The implementing agent must edit the front matter to update status to `in-progre
 Set `status: resolved` when the plan is fully implemented.
 Set `status: superseded` when another plan replaces it, and link the replacing plan's path under `# Purpose`.
 Set `status: abandoned` when the plan is dropped with no replacement, and give the reason under `# Purpose`.
-When a plan is abandoned, set its research file to `abandoned`, or back to `open` if the research is still valid.
+When a plan is abandoned and no other open or in-progress plan uses its
+research file, the implementing agent sets that research file to `abandoned`,
+or back to `open` if the research is still valid.
 
 A new plan file must include:
 
