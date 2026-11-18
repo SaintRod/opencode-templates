@@ -52,8 +52,8 @@ status: open
 ```
 
 Use `date` when you create the file.
-Add or update `updated` only when you modify an existing research file.
-`updated` must not be later than today's date.
+When you change an existing file, set `updated` to today's date.
+Do not add `updated` when you create the file.
 Add `status: open` when a research file is created.
 Add `status: resolved` when a research file has been completed/resolved.
 Set `status: abandoned` when the research is dropped without being resolved.
@@ -96,8 +96,8 @@ status: open
 ```
 
 Use `date` when you create the file.
-Add or update `updated` only when you modify an existing plan file.
-`updated` must not be later than today's date.
+When you change an existing file, set `updated` to today's date.
+Do not add `updated` when you create the file.
 Add `status: open` when a plan file is created.
 The implementing agent must edit the front matter to update status to `in-progress` when the first task starts; keep it if the plan stops partway.
 Set `status: resolved` when the plan is fully implemented.
