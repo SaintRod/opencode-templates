@@ -27,6 +27,17 @@
 - before committing, inspect status, diff, and recent commits
 - stage only files relevant to the requested work
 
+# Research and plan dates
+
+These rules apply to research and plan files.
+
+When you create a file, set `date` to today's date.
+Do not add `updated` when you create the file.
+If you change an existing file and today is later than `date`, set
+`updated` to today's date.
+If you change an existing file and today is the same as or earlier than
+`date`, do not add or change `updated`.
+
 # Research
 
 Use research before planning when the work is ambiguous, architectural,
@@ -51,9 +62,7 @@ status: open
 ---
 ```
 
-Use `date` when you create the file.
-When you change an existing file, set `updated` to today's date.
-Do not add `updated` when you create the file.
+Follow the rules in `# Research and plan dates`.
 Add `status: open` when a research file is created.
 Add `status: resolved` when a research file has been completed/resolved.
 Set `status: abandoned` when the research is dropped without being resolved.
@@ -95,9 +104,7 @@ status: open
 ---
 ```
 
-Use `date` when you create the file.
-When you change an existing file, set `updated` to today's date.
-Do not add `updated` when you create the file.
+Follow the rules in `# Research and plan dates`.
 Add `status: open` when a plan file is created.
 The implementing agent must edit the front matter to update status to `in-progress` when the first task starts; keep it if the plan stops partway.
 Set `status: resolved` when the plan is fully implemented.
