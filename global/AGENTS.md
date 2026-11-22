@@ -27,6 +27,26 @@
 - before committing, inspect status, diff, and recent commits
 - stage only files relevant to the requested work
 
+# Research and plan front matter
+
+Research files must use Markdown with YAML front matter.
+Plan files should use the same format.
+New research and plan files must start with `status: open`:
+
+```yaml
+---
+date: yyyy-mm-dd
+status: open
+---
+```
+
+When you create a file, set `date` to today's date.
+Do not add `updated` when you create the file.
+If you change an existing file and today is later than `date`, set
+`updated` to today's date.
+If you change an existing file and today is the same as or earlier than
+`date`, do not add or change `updated`.
+
 # Research
 
 Use research before planning when the work is ambiguous, architectural,
@@ -42,19 +62,6 @@ Name the file after its topic, for example
 `research/restructure-little-birdie.md`. Put the date in the front matter
 only, never in the filename.
 
-Research files must be Markdown files with YAML front matter:
-
-```yaml
----
-date: yyyy-mm-dd
-status: open
----
-```
-
-Use `date` when you create the file.
-When you change an existing file, set `updated` to today's date.
-Do not add `updated` when you create the file.
-Add `status: open` when a research file is created.
 Add `status: resolved` when a research file has been completed/resolved.
 Set `status: abandoned` when the research is dropped without being resolved.
 
@@ -86,19 +93,6 @@ Ask first, unless the user explicitly asks to create a plan or the repo already 
 If requested work is larger than a small single-file change and no plan exists, ask whether to create a plan before implementing.
 An early task in each plan must mark `status: in-progress` in the research file that informed it, if any; keep it if the plan stops partway.
 Once a plan is implemented, agents must mark `status: resolved` in that research file.
-Plan files should be Markdown files with YAML front matter:
-
-```yaml
----
-date: yyyy-mm-dd
-status: open
----
-```
-
-Use `date` when you create the file.
-When you change an existing file, set `updated` to today's date.
-Do not add `updated` when you create the file.
-Add `status: open` when a plan file is created.
 The implementing agent must edit the front matter to update status to `in-progress` when the first task starts; keep it if the plan stops partway.
 Set `status: resolved` when the plan is fully implemented.
 Set `status: superseded` when another plan replaces it, and link the replacing plan's path under `# Purpose`.
@@ -146,9 +140,8 @@ single `Command` field that gives the exact command. Change and Expected
 result still apply. If the command has no independent check, Validate can
 restate the command's own output as the success condition.
 
-The generic checklist example and the Roborev `## Commit` checklist below
-are each a self-contained checklist. They are not Task-format entries, so
-they do not need File/Lines/Before/After/Validate.
+The Roborev `## Commit` checklist below is not a Task-format entry, so it
+does not need File/Lines/Before/After/Validate.
 
 Example:
 
@@ -184,13 +177,7 @@ Plan-level rules:
 - Record implementation notes and deviations under the task they affect
 
 Use unchecked boxes for planned work and check them off only after
-completion:
-
-```md
-- [ ] Make the change
-- [ ] Run the validation
-- [ ] Record any implementation notes
-```
+completion.
 
 While creating or reviewing a plan, unless the user explicitly asks, do
 not implement it.
@@ -206,7 +193,6 @@ During implementation of an approved plan:
 - Update task checkboxes and implementation notes as work completes
 - Do not stop until all planned tasks are complete, blocked, or explicitly
   deferred
-- Preserve unrelated worktree changes
 - Run the smallest meaningful validation for the change
 - Record implementation questions, blockers, deviations, and validation
   failures in the plan
@@ -217,11 +203,11 @@ If Roborev is installed, include a final commit task. To detect Roborev, run
 ```md
 ## Commit
 
-- [ ] Inspect status, diff, and recent commits
-- [ ] Stage only files relevant to this plan, including the plan file
-- [ ] Commit without pushing
-- [ ] Do not push. The user starts Roborev review manually
+- [ ] Follow the worktree safety rules and commit the relevant files,
+  including the plan file
 ```
+
+The user starts Roborev review manually.
 
 If Roborev is not installed (`roborev version` fails), unless the user
 explicitly requests one, do not include a commit task.
